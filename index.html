@@ -2390,11 +2390,12 @@
   var countEl = document.getElementById('visit-count');
   if (!countEl) return;
 
-  // Shared counter: increments once whenever the portfolio page is loaded.
-  fetch('https://api.counterapi.dev/v1/jana-alseraihi-portfolio/visits/up')
+  // Shared counter (Tally API — Cloudflare Pages Functions + KV, CORS-enabled).
+  // Counts every page load, so repeat visits from the same person still count.
+  fetch('https://tally.yuki.sh/hits/jana-alseraihi/portfolio.json')
     .then(function(response){ return response.json(); })
     .then(function(data){
-      var value = data && data.data && data.data.up_count;
+      var value = data && data.visit;
       if (typeof value === 'number') countEl.textContent = value.toLocaleString();
     })
     .catch(function(){
