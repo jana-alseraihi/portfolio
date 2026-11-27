@@ -1095,6 +1095,49 @@
     .club-card{grid-template-columns:1fr;}
   }
 
+  /* ---------- IMPACT ---------- */
+  .impact-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(200px, 1fr));
+    gap:16px;
+  }
+  .impact-card{
+    background:var(--card-bg);
+    border:1px solid var(--card-border);
+    border-radius:16px;
+    padding:24px 22px 22px;
+    transition:border-color 0.25s ease, transform 0.25s ease;
+  }
+  .impact-card:hover{
+    border-color:var(--card-border-hover);
+    transform:translateY(-3px);
+  }
+  .impact-num{
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:clamp(34px,5vw,44px);
+    line-height:1;
+    letter-spacing:-0.02em;
+    background:linear-gradient(135deg, var(--blue-sky-soft), var(--purple-soft));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    display:inline-block;
+    font-variant-numeric:tabular-nums;
+    direction:ltr;
+  }
+  .impact-label{
+    margin-top:12px;
+    color:var(--text-muted);
+    font-size:14.5px;
+    line-height:1.55;
+  }
+  @media (max-width:600px){
+    .impact-grid{grid-template-columns:1fr 1fr;gap:12px;}
+    .impact-card{padding:20px 16px 18px;}
+    .impact-label{font-size:13.5px;}
+  }
+
   /* ---------- EXPERIENCE ---------- */
   .timeline{
     position:relative;
@@ -1370,6 +1413,7 @@
     <span class="nav-name" data-en="Jana Alseraihi" data-ar="جنى السريحي">Jana Alseraihi</span>
     <ul class="nav-links">
       <li><a href="#about" data-en="About" data-ar="نبذة">About</a></li>
+      <li><a href="#impact" data-en="Impact" data-ar="الإنجازات">Impact</a></li>
       <li><a href="#skills" data-en="Skills" data-ar="المهارات">Skills</a></li>
       <li><a href="#projects" data-en="Projects" data-ar="المشاريع">Projects</a></li>
       <li><a href="#organization" data-en="Organization" data-ar="المنظمة">Organization</a></li>
@@ -1434,6 +1478,60 @@
           <div class="status-label" data-en="// currently" data-ar="// حاليًا">// currently</div>
           <div class="status-line" data-en="B.Sc. in Computer Engineering — Networks &amp; Security Track, Yanbu Industrial College" data-ar="بكالوريوس هندسة حاسبات — مسار الشبكات والأمن، كلية ينبع الصناعية">B.Sc. in Computer Engineering — Networks &amp; Security Track, Yanbu Industrial College</div>
           <div class="status-line" data-en="OT Trainee — Asset Engineering Department, SABIC YANPET" data-ar="متدربة تقنية تشغيلية — قسم هندسة الأصول، سابك ينبت">OT Trainee — Asset Engineering Department, SABIC YANPET</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section id="impact">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag" data-en="[ impact ]" data-ar="[ الإنجازات ]">[ impact ]</span>
+        <h2 data-en="Impact in numbers" data-ar="إنجازاتي بالأرقام">Impact in numbers</h2>
+        <p data-en="What my training at SABIC YANPET has delivered so far." data-ar="ما حققته حتى الآن خلال تدريبي في سابك ينبت.">What my training at SABIC YANPET has delivered so far.</p>
+      </div>
+      <div class="impact-grid">
+        <div class="impact-card">
+          <span class="impact-num" data-count="28" data-suffix="">28</span>
+          <p class="impact-label" data-en="weeks of hands-on training" data-ar="أسبوعًا من التدريب العملي">weeks of hands-on training</p>
+        </div>
+        <div class="impact-card">
+          <span class="impact-num" data-count="7" data-suffix="">7</span>
+          <p class="impact-label" data-en="digital transformation systems for faster work and easy-to-find files and records" data-ar="أنظمة للتحول الرقمي لتسريع العمل وتسهيل الوصول إلى الملفات والسجلات">digital transformation systems for faster work and easy-to-find files and records</p>
+        </div>
+        <div class="impact-card">
+          <span class="impact-num" data-count="5" data-suffix="">5</span>
+          <p class="impact-label" data-en="automated approval workflows that replaced manual forms and long email chains" data-ar="مسارات اعتماد مؤتمتة حلّت محل النماذج اليدوية وسلاسل البريد الطويلة">automated approval workflows that replaced manual forms and long email chains</p>
+        </div>
+        <div class="impact-card">
+          <span class="impact-num" data-count="100" data-suffix="%">100%</span>
+          <p class="impact-label" data-en="of manual data entry removed from a weekly report" data-ar="من الإدخال اليدوي للبيانات أُلغي من تقرير أسبوعي">of manual data entry removed from a weekly report</p>
+        </div>
+        <div class="impact-card">
+          <span class="impact-num" data-count="276" data-suffix="+">276+</span>
+          <p class="impact-label" data-en="participants used an event web app I built" data-ar="مشاركًا استخدموا تطبيق ويب لفعالية قمت ببنائه">participants used an event web app I built</p>
+        </div>
+        <div class="impact-card">
+          <span class="impact-num" data-count="20" data-suffix="+">20+</span>
+          <p class="impact-label" data-en="members a month use a voting and attendance website I built" data-ar="عضوًا شهريًا يستخدمون موقع التصويت وتسجيل الحضور الذي بنيته">members a month use a voting and attendance website I built</p>
+        </div>
+        <div class="impact-card">
+          <span class="impact-num" data-count="3" data-suffix="+">3+</span>
+          <p class="impact-label" data-en="OT assets supported in a security upgrade" data-ar="أصول تقنية تشغيلية (OT) دعمتها في ترقية أمنية">OT assets supported in a security upgrade</p>
+        </div>
+        <div class="impact-card">
+          <span class="impact-num" data-count="3" data-suffix="+">3+</span>
+          <p class="impact-label" data-en="cybersecurity awareness sessions delivered" data-ar="جلسات توعية بالأمن السيبراني قدّمتها">cybersecurity awareness sessions delivered</p>
+        </div>
+        <div class="impact-card">
+          <span class="impact-num" data-count="4" data-suffix="">4</span>
+          <p class="impact-label" data-en="PCs set up with the standard Windows image" data-ar="أجهزة حاسب جهّزتها بنسخة Windows القياسية">PCs set up with the standard Windows image</p>
+        </div>
+        <div class="impact-card">
+          <span class="impact-num" data-count="1" data-suffix="">1</span>
+          <p class="impact-label" data-en="control system upgrade supported during the plant turnaround" data-ar="ترقية لنظام التحكم دعمتها خلال فترة الصيانة الشاملة للمصنع">control system upgrade supported during the plant turnaround</p>
         </div>
       </div>
     </div>
@@ -2008,10 +2106,15 @@
             <li data-en="Used Splunk SIEM, SolarWinds, and Trellix for cybersecurity, endpoint, and infrastructure monitoring." data-ar="استخدمت Splunk SIEM وSolarWinds وTrellix لمراقبة الأمن السيبراني ونقاط النهاية والبنية التحتية.">Used Splunk SIEM, SolarWinds, and Trellix for cybersecurity, endpoint, and infrastructure monitoring.</li>
             <li data-en="Supported the Trellix AV01 → AV02 upgrade for endpoint security." data-ar="دعمت عملية ترقية Trellix من AV01 إلى AV02 لتعزيز أمن نقاط النهاية.">Supported the Trellix AV01 → AV02 upgrade for endpoint security.</li>
             <li data-en="Worked with industrial analyzers in the Maintenance Department for equipment monitoring." data-ar="عملت مع المحللات الصناعية في قسم الصيانة لمراقبة الأجهزة.">Worked with industrial analyzers in the Maintenance Department for equipment monitoring.</li>
+            <li data-en="Completed 28 weeks of hands-on training across OT, IT, and digital transformation work." data-ar="أتممت 28 أسبوعًا من التدريب العملي في مجالات التقنية التشغيلية (OT) وتقنية المعلومات والتحول الرقمي.">Completed 28 weeks of hands-on training across OT, IT, and digital transformation work.</li>
+            <li data-en="Built 7 digital transformation systems that speed up work and make files and records easy to find." data-ar="بنيت 7 أنظمة للتحول الرقمي تسرّع العمل وتسهّل الوصول إلى الملفات والسجلات.">Built 7 digital transformation systems that speed up work and make files and records easy to find.</li>
+            <li data-en="Built 5 automated approval workflows that replaced manual forms and long email chains." data-ar="بنيت 5 مسارات اعتماد مؤتمتة حلّت محل النماذج اليدوية وسلاسل البريد الإلكتروني الطويلة.">Built 5 automated approval workflows that replaced manual forms and long email chains.</li>
+            <li data-en="Supported a security upgrade across 3+ OT assets." data-ar="دعمت ترقية أمنية شملت أكثر من 3 أصول تقنية تشغيلية (OT).">Supported a security upgrade across 3+ OT assets.</li>
+            <li data-en="Supported a control system upgrade during the plant turnaround." data-ar="دعمت ترقية نظام التحكم خلال فترة الصيانة الشاملة للمصنع.">Supported a control system upgrade during the plant turnaround.</li>
+            <li data-en="Set up 4 PCs with the standard Windows image." data-ar="جهّزت 4 أجهزة حاسب بنسخة Windows القياسية.">Set up 4 PCs with the standard Windows image.</li>
             <li data-en="Developed a SABIC 50 Years event website used by 276+ participants." data-ar="طوّرت موقعًا إلكترونيًا لفعالية سابك الخمسين عامًا استخدمه أكثر من 276 مشاركًا.">Developed a SABIC 50 Years event website used by 276+ participants.</li>
-            <li data-en="Developed a Toastmasters digital voting and attendance system used by 20+ participants monthly." data-ar="طوّرت نظامًا رقميًا للتصويت وتسجيل الحضور لنادي Toastmasters يستخدمه أكثر من 20 مشاركًا شهريًا.">Developed a Toastmasters digital voting and attendance system used by 20+ participants monthly.</li>
-            <li data-en="Delivered a Cybersecurity Awareness presentation on phishing risks." data-ar="قدّمت عرضًا تقديميًا للتوعية بالأمن السيبراني حول مخاطر التصيد الاحتيالي (Phishing).">Delivered a Cybersecurity Awareness presentation on phishing risks.</li>
-            <li data-en="Delivered a second Cybersecurity Awareness presentation on the threats of unknown USB devices." data-ar="قدّمت عرضًا تقديميًا ثانيًا للتوعية بالأمن السيبراني حول مخاطر أجهزة USB المجهولة.">Delivered a second Cybersecurity Awareness presentation on the threats of unknown USB devices.</li>
+            <li data-en="Developed a Toastmasters digital voting and attendance system used by 20+ members monthly." data-ar="طوّرت نظامًا رقميًا للتصويت وتسجيل الحضور لنادي Toastmasters يستخدمه أكثر من 20 عضوًا شهريًا.">Developed a Toastmasters digital voting and attendance system used by 20+ members monthly.</li>
+            <li data-en="Delivered 3+ Cybersecurity Awareness sessions, including talks on phishing risks and the threats of unknown USB devices." data-ar="قدّمت أكثر من 3 جلسات للتوعية بالأمن السيبراني، منها عروض حول مخاطر التصيد الاحتيالي (Phishing) ومخاطر أجهزة USB المجهولة.">Delivered 3+ Cybersecurity Awareness sessions, including talks on phishing risks and the threats of unknown USB devices.</li>
           </ul>
         </div>
       </div>
@@ -2581,5 +2684,34 @@
 })();
 </script>
 
+<script>
+(function(){
+  var nums = document.querySelectorAll('.impact-num[data-count]');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!nums.length || reduce || !('IntersectionObserver' in window)) return;
+  function run(el){
+    var target = parseInt(el.getAttribute('data-count'), 10);
+    var suffix = el.getAttribute('data-suffix') || '';
+    var start = null, dur = 1400;
+    function step(t){
+      if (start === null) start = t;
+      var p = Math.min((t - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * eased) + suffix;
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){ run(e.target); obs.unobserve(e.target); }
+    });
+  }, {threshold:0.4});
+  nums.forEach(function(el){
+    el.textContent = '0' + (el.getAttribute('data-suffix') || '');
+    obs.observe(el);
+  });
+})();
+</script>
 </body>
 </html>
