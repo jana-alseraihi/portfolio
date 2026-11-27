@@ -2687,24 +2687,25 @@
 <script>
 (function(){
   var nums = document.querySelectorAll('.impact-num[data-count]');
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (!nums.length || reduce || !('IntersectionObserver' in window)) return;
+  if (!nums.length || !('IntersectionObserver' in window)) return;
   function run(el){
+    if (el._raf) cancelAnimationFrame(el._raf);
     var target = parseInt(el.getAttribute('data-count'), 10);
     var suffix = el.getAttribute('data-suffix') || '';
-    var start = null, dur = 1400;
+    var start = null, dur = 2000;
     function step(t){
       if (start === null) start = t;
       var p = Math.min((t - start) / dur, 1);
       var eased = 1 - Math.pow(1 - p, 3);
       el.textContent = Math.round(target * eased) + suffix;
-      if (p < 1) requestAnimationFrame(step);
+      if (p < 1) el._raf = requestAnimationFrame(step);
     }
-    requestAnimationFrame(step);
+    el._raf = requestAnimationFrame(step);
   }
   var obs = new IntersectionObserver(function(entries){
     entries.forEach(function(e){
-      if (e.isIntersecting){ run(e.target); obs.unobserve(e.target); }
+      if (e.isIntersecting){ run(e.target); }
+      else { e.target.textContent = '0' + (e.target.getAttribute('data-suffix') || ''); }
     });
   }, {threshold:0.4});
   nums.forEach(function(el){
